@@ -1,0 +1,18 @@
+{
+    "BACKGROUND": "#19161B",
+    "SURFACE": "#241F25",
+
+    "PRIMARY": "#F2A7B8",
+    "PRIMARY_HOVER": "#F7B9C8",
+    "PRIMARY_PRESSED": "#D98C9E",
+    "SELECTION": "#F2A7B840",
+
+    "TEXT": "#F7F2F4",
+    "TEXT_MUTED": "#BBAEB4",
+
+    "BORDER": "#3D353E",
+
+    "SUCCESS": "#9DD9A5",
+    "WARNING": "#EBC66D",
+    "ERROR": "#E07A7A"
+}

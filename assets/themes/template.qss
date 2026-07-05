@@ -1,0 +1,306 @@
+QMainWindow {
+    background: {{BACKGROUND}};
+}
+
+QWidget {
+    background: {{BACKGROUND}};
+    color: {{TEXT}};
+}
+
+QFrame {
+    background: transparent;
+    padding: 12px;
+}
+
+QFrame#card {
+    border: 1px solid {{BORDER}};
+    border-radius: 10px;
+    background: rgba(255,255,255,0.01);
+}
+
+QFrame#coverFrame {
+    border: 1px solid {{BORDER}};
+    border-radius: 6px;
+    background: {{SURFACE}};
+    padding: 0px;
+}
+
+QFrame#divider {
+    background: {{BORDER}};
+    border: none;
+    padding: 0px;
+    max-height: 1px;
+}
+
+QLineEdit {
+    background: {{SURFACE}};
+    color: {{TEXT}};
+    border: 1px solid {{BORDER}};
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 36px;
+    selection-background-color: {{SELECTION}};
+}
+
+QLineEdit:focus {
+    border: 1px solid {{PRIMARY}};
+}
+
+QPushButton {
+    background: {{PRIMARY}};
+    color: {{BACKGROUND}};
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    min-height: 36px;
+    min-width: 110px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background: {{PRIMARY_HOVER}};
+}
+
+QPushButton:pressed {
+    background: {{PRIMARY_PRESSED}};
+}
+
+QPushButton#downloadBtn {
+    font-size: 14px;
+    font-weight: 700;
+    min-height: 42px;
+    border-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QPushButton:disabled {
+    background: {{SURFACE}};
+    color: {{TEXT_MUTED}};
+}
+
+QLabel {
+    color: {{TEXT}};
+    font-size: 13px;
+}
+
+QLabel#pageTitle {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+QLabel#pageSubtitle {
+    color: {{TEXT_MUTED}};
+    font-size: 11px;
+}
+
+QLabel#fieldLabel {
+    color: {{TEXT_MUTED}};
+    font-weight: 600;
+}
+
+QLabel#fieldValue {
+    color: {{TEXT}};
+}
+
+QLabel#sectionTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: {{PRIMARY}};
+}
+
+QLabel#coverArt {
+    color: {{TEXT_MUTED}};
+    font-size: 11px;
+    background: transparent;
+}
+
+QLabel#statusText {
+    color: {{TEXT_MUTED}};
+    font-family: Consolas;
+    font-size: 12px;
+}
+
+/* ── Reader ───────────────────────────────────────────────────────── */
+
+QFrame#readerBar {
+    background: {{SURFACE}};
+    border-bottom: 1px solid {{BORDER}};
+    padding: 0px;
+    border-radius: 0px;
+}
+
+QFrame#readerStatusBar {
+    background: {{SURFACE}};
+    border-top: 1px solid {{BORDER}};
+    padding: 0px;
+    border-radius: 0px;
+}
+
+QFrame#readerSidebar {
+    background: {{SURFACE}};
+    border-right: 1px solid {{BORDER}};
+    border-radius: 0px;
+    padding: 0px;
+    min-width: 200px;
+    max-width: 280px;
+}
+
+QFrame#readerSidebar QLabel#sectionTitle {
+    background: {{BORDER}};
+    color: {{PRIMARY}};
+    border-radius: 0px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+QListWidget#chapterList {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 4px 8px;
+}
+
+QListWidget#chapterList::item {
+    padding: 7px 10px;
+    color: {{TEXT}};
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 1px 0px;
+}
+
+QListWidget#chapterList::item:hover {
+    background: {{BORDER}};
+}
+
+QListWidget#chapterList::item:selected {
+    background: rgba(242, 167, 184, 0.22);
+    color: {{PRIMARY}};
+    font-weight: 600;
+}
+
+QPushButton#readerBarBtn {
+    background: transparent;
+    color: {{TEXT_MUTED}};
+    border: 1px solid {{BORDER}};
+    border-radius: 6px;
+    padding: 4px 8px;
+    min-height: 28px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+QPushButton#readerBarBtn:hover {
+    background: {{BORDER}};
+    color: {{TEXT}};
+}
+
+QPushButton#readerNavBtn {
+    background: transparent;
+    color: {{TEXT_MUTED}};
+    border: 1px solid {{BORDER}};
+    border-radius: 6px;
+    padding: 4px 8px;
+    min-height: 28px;
+    min-width: 70px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+QPushButton#readerNavBtn:hover {
+    background: {{BORDER}};
+    color: {{TEXT}};
+}
+
+QPushButton#readerNavBtn:disabled {
+    background: transparent;
+    color: {{BORDER}};
+    border-color: {{BORDER}};
+}
+
+QPushButton#fitBtn {
+    background: transparent;
+    color: {{TEXT_MUTED}};
+    border: 1px solid {{BORDER}};
+    border-radius: 6px;
+    min-height: 26px;
+    min-width: 60px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+QPushButton#fitBtn:hover {
+    background: {{BORDER}};
+    color: {{TEXT}};
+}
+
+QPushButton#fitBtn:checked {
+    background: {{PRIMARY}};
+    color: {{BACKGROUND}};
+    border-color: {{PRIMARY}};
+}
+
+QLabel#readerChapterLabel {
+    color: {{TEXT}};
+    font-size: 13px;
+    font-weight: 600;
+}
+
+QLabel#readerPlaceholder {
+    color: {{TEXT_MUTED}};
+    font-size: 14px;
+    padding: 40px;
+}
+
+QScrollArea#pageView {
+    background: #0e0c0f;
+    border: none;
+}
+
+QScrollArea#pageView QWidget {
+    background: #0e0c0f;
+    padding: 0px;
+    margin: 0px;
+    spacing: 0px;
+}
+
+QScrollArea#pageView QLabel {
+    background: transparent;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+/* Downloader page — reader switch button */
+QPushButton#readerSwitchBtn {
+    background: transparent;
+    color: {{PRIMARY}};
+    border: 1px solid {{PRIMARY}};
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    min-height: 30px;
+}
+
+QPushButton#readerSwitchBtn:hover {
+    background: {{PRIMARY}};
+    color: {{BACKGROUND}};
+}
+
+/* Reader bar — downloader switch button (same object name, reader context) */
+QFrame#readerBar QPushButton#readerSwitchBtn {
+    background: transparent;
+    color: {{PRIMARY}};
+    border: 1px solid {{PRIMARY}};
+    border-radius: 6px;
+    min-height: 28px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+QFrame#readerBar QPushButton#readerSwitchBtn:hover {
+    background: {{PRIMARY}};
+    color: {{BACKGROUND}};
+}
