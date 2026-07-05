@@ -1,0 +1,32 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+comic_reader.log
+
+# App data (local/user-specific)
+data/library/
+data/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
