@@ -67,7 +67,6 @@ comicReader/
 │   ├── services/      # Filesystem, HTTP, settings services
 │   ├── ui/            # Windows, pages, dialogs
 │   └── utils/         # Formatting, theming, URL helpers
-├── tests/             # Unit tests + fixtures
 ├── main.py
 └── requirements.txt
 ```
