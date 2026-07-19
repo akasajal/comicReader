@@ -71,11 +71,6 @@ comicReader/
 └── requirements.txt
 ```
 
-## Testing
-
-```bash
-pytest
-```
 
 ## Supported Sites
 
