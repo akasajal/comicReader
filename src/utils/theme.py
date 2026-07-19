@@ -1,8 +1,9 @@
 import json
-from pathlib import Path
+
+from resource import resource_path
 
 
-THEMES = Path("assets/themes")
+THEMES = resource_path("assets", "themes")
 
 
 def load_theme(name: str) -> str:

@@ -9,6 +9,7 @@ from PySide6.QtWidgets import (
     QFileDialog, QSplitter, QStackedWidget,
 )
 
+from resource import resource_path
 from src.reader.cbz_loader import list_cbz_files, load_pages
 from src.models.settings import Settings
 from src.services.settings import save_settings
@@ -18,7 +19,7 @@ from src.services.settings import save_settings
 
 def _icon(name: str, size: int = 16, tint: str | None = None) -> QIcon:
     from PySide6.QtGui import QPainter, QColor
-    path = f"assets/icons/{name}.svg"
+    path = str(resource_path("assets", "icons", f"{name}.svg"))
     px = QPixmap(path)
     if px.isNull():
         return QIcon()
@@ -38,7 +39,6 @@ def _icon(name: str, size: int = 16, tint: str | None = None) -> QIcon:
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
 def _chapter_display_name(stem: str) -> str:
-    """Turn "Chapter_0042" → "Chapter 42", leave unknown stems as-is."""
     import re
     m = re.fullmatch(r"Chapter[_-]0*(\d+)", stem, re.IGNORECASE)
     if m:
@@ -71,8 +71,6 @@ class PageLoaderWorker(QThread):
 # ── Page view (scrollable canvas of stacked images) ───────────────────
 
 class PageView(QScrollArea):
-    """Renders all pages of a chapter as a single stitched QPixmap."""
-
     min_width_needed = Signal(int)   # emitted after stitch with required window width
 
     def __init__(self):
@@ -238,7 +236,7 @@ class ReaderPage(QWidget):
         switch_btn = QPushButton("  Downloader")
         # Two-state icon: normal=pink (visible on dark bg), hover=dark (visible on pink bg)
         dl_icon = QIcon()
-        px_normal = QPixmap("assets/icons/download.svg")
+        px_normal = QPixmap(str(resource_path("assets", "icons", "download.svg")))
         if not px_normal.isNull():
             from PySide6.QtGui import QPainter, QColor
             def _tinted(px, color):
@@ -358,14 +356,14 @@ class ReaderPage(QWidget):
             # Build a two-state QIcon: checked=dark (#19161B), unchecked=muted (#BBAEB4)
             icon = QIcon()
             # Active (checked) state — dark icon on pink bg
-            px_on = QPixmap(f"assets/icons/{icon_name}.svg")
+            px_on = QPixmap(str(resource_path("assets", "icons", f"{icon_name}.svg")))
             if not px_on.isNull():
                 icon.addPixmap(
                     px_on.scaled(14, 14, Qt.KeepAspectRatio, Qt.SmoothTransformation),
                     QIcon.Normal, QIcon.On,
                 )
             # Inactive (unchecked) state — tint muted by swapping to a recoloured copy
-            px_off = QPixmap(f"assets/icons/{icon_name}.svg")
+            px_off = QPixmap(str(resource_path("assets", "icons", f"{icon_name}.svg")))
             if not px_off.isNull():
                 from PySide6.QtGui import QPainter, QColor
                 px_muted = QPixmap(px_off.size())

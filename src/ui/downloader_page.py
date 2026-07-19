@@ -17,6 +17,7 @@ from PySide6.QtWidgets import (
     QScrollArea,
 )
 
+from resource import resource_path
 from src.downloader.analyzer import Analyzer
 from src.downloader.downloader import Downloader
 from src.ui.chapter_select_dialog import ChapterSelectDialog
@@ -29,14 +30,6 @@ from src.utils.url import normalize_url
 
 
 class AnalyzerWorker(QThread):
-    """Runs Analyzer.analyze() on a background thread.
-
-    Emits:
-      progress(str)          — human-readable step update
-      finished(Series)       — analysis succeeded
-      failed(str, bool)      — message + is_unsupported flag
-    """
-
     progress = Signal(str)
     finished = Signal(object)
     failed   = Signal(str, bool)
@@ -111,7 +104,7 @@ class DownloaderPage(QWidget):
         header_row = QHBoxLayout()
         header_row.setSpacing(14)
 
-        self.logo_label = QSvgWidget("assets/icons/logo.svg")
+        self.logo_label = QSvgWidget(str(resource_path("assets", "icons", "logo.svg")))
         self.logo_label.setObjectName("logoBox")
         self.logo_label.setFixedSize(52, 52)
 
